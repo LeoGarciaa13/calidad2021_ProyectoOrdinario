@@ -49,10 +49,6 @@ jobs:
       - run:
           name: Install MySQL CLI; Import dummy data; run an example query
           command: |
-            sudo dpkg-query -l | less | grep mysql
-            sudo dpkg --purge mysql-common
-            sudo dpkg --purge mysql-server-8.0
-            sudo dpkg --purge mysql-server-core-8.0
             sudo apt-get install mysql-server
             mysql -h 127.0.0.1 -u user -ppassw0rd test_db < sql-data/dummy.sql
             mysql -h 127.0.0.1 -u user -ppassw0rd --execute="SELECT * FROM test_db.Persons"
