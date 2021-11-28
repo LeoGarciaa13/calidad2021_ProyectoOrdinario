@@ -12,12 +12,42 @@ jobs:
     # Be sure to update the Docker image tag below to openjdk version of your application.
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
+      # Set image for Java JDK 11.0 
       - image: cimg/openjdk:11.0
+      # Set image for MySQl Database 
+      - image: circleci/mysql:8.0.4
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: prueba_db
+          MYSQL_USER: root
+          MYSQL_PASSWORD: secret
+
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       # Checkout the code as the first step.
       - checkout
+      - run:
+      # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          name: Waiting for MySQL to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z 127.0.0.1 3306 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for MySQL && exit 1
+      # Install MySql and import Dump Script
+      - run:
+          name: Install MySQL CLI; Import dummy data; run an example query
+          command: |
+            sudo apt-get install default-mysql-client
+            mysql -h 127.0.0.1 -u root -secret prueba_db < sql-data/dummy.sql
+            mysql -h 127.0.0.1 -u root -secret --execute="SELECT * FROM prueba_db.alumnos_tbl"
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
