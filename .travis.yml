@@ -2,3 +2,6 @@ language: java
 
 services:
   - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE prueba_db;'
