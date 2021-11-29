@@ -7,7 +7,7 @@ USE `pruebas_db`;
 
 CREATE TABLE IF NOT EXISTS `alumnos_tbl` (
   `id` int(11),
-  `name` varchar(50),
+  `nombre` varchar(50),
   `email` varchar(50),
   `edad` int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
