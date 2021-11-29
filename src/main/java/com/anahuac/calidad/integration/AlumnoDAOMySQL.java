@@ -1,4 +1,4 @@
-package com.anahuac.calidad.dbunit;
+package com.anahuac.calidad.integration;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.anahuac.calidad.DoublesDAO.Alumno;
-import com.anahuac.calidad.DoublesDAO.AlumnoDAO;
+import com.anahuac.calidad.dobles.Alumno;
+import com.anahuac.calidad.dobles.AlumnoDAO;
 
 public class AlumnoDAOMySQL {
 

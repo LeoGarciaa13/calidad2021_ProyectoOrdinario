@@ -1,4 +1,4 @@
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.dobles;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,9 @@ import java.util.HashMap;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+
+import com.anahuac.calidad.dobles.Alumno;
+import com.anahuac.calidad.dobles.FakeOracleAlumnoDAO;
 
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.when;

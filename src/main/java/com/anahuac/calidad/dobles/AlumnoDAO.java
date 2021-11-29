@@ -1,4 +1,4 @@
-package com.anahuac.calidad.DoublesDAO;
+package com.anahuac.calidad.dobles;
 
 public interface AlumnoDAO {
 	public Boolean addAlumno(Alumno a); 
