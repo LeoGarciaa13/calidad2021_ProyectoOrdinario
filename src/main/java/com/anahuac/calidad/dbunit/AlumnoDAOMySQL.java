@@ -18,7 +18,7 @@ public class AlumnoDAOMySQL {
 			// Establish the driver connector
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			// Set the URI for connecting the MySql database
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:33060/pruebas_db", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/pruebas_db", "root", "");
 		} catch (Exception e) {
 			System.out.println(e);
 		}

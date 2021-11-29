@@ -2,7 +2,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:11.0
+      - image: cimg/openjdk:11.0-browsers-legacy
+        environment:
+          DB_ROOT_USER: root
+          DB_URL: jdbc:mysql://127.0.0.1:3306/pruebas_db
+          DB_DRIVER: com.mysql.cj.jdbc.Driver
+          DB_PASS: ""
+      # MySQL
       - image: circleci/mysql:latest-ram
         command: [--default-autentication-plugin=mysql_native_password]
         environment: 
