@@ -96,7 +96,7 @@ public class mernCRUDTest {
 	    assertThat("Leo G", is(not(FirstUser)));
 
 	 }
-	 
+	 /*
 	 // Update person tests
 	 @Test
 	 public void testmernUpdate() throws Exception {
@@ -121,7 +121,7 @@ public class mernCRUDTest {
 	    String tag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
 	    assertThat("Nice one!", is(tag));
 
-	 }
+	 }*/
 	 
 	// Search person fields
 	 @Test
