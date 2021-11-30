@@ -107,6 +107,7 @@ public class mernCRUDTest {
 	    // Action on Edit
 	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[5]/button[1]")).click(); 
 	    // Update email field 
+	    driver.findElement(By.name("email")).click();
 	    driver.findElement(By.name("email")).clear();
 	    driver.findElement(By.name("email")).click();
 	    driver.findElement(By.name("email")).clear();
