@@ -33,7 +33,7 @@ public class mernCRUDTest {
 	public void setUp() throws Exception {
 		WebDriverManager.chromedriver().setup();
 	    driver = new ChromeDriver();
-	    baseUrl = "http://127.0.0.1:3000/";
+	    baseUrl = "https://mern-crud.herokuapp.com/";
 	    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	    js = (JavascriptExecutor) driver;
 	  }
