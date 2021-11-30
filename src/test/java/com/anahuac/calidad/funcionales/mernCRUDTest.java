@@ -33,7 +33,7 @@ public class mernCRUDTest {
 	public void setUp() throws Exception {
 		WebDriverManager.chromedriver().setup();
 	    driver = new ChromeDriver();
-	    baseUrl = "http://localhost:3000/";
+	    baseUrl = "http://127.0.0.1:3000/";
 	    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	    js = (JavascriptExecutor) driver;
 	  }
@@ -52,7 +52,7 @@ public class mernCRUDTest {
 	 @Test
 	 public void testmernAdd() throws Exception {
 		// Get the base URL
-		driver.get("http://localhost:3000/");
+		driver.get(baseUrl);
 		// Action click on Add New
 	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();//"//div[@id='root']/div/div[2]/button"
 	    // Set name field
@@ -85,7 +85,7 @@ public class mernCRUDTest {
 		// Include a student for a delete 
 		includeStudent();
 		// Get the base URL
-		driver.get("http://localhost:3000/");
+		driver.get(baseUrl);
 	    // Action on Delete 
 	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[5]/button[2]")).click(); 
 	    // Action on Yes 
@@ -103,7 +103,7 @@ public class mernCRUDTest {
 		// Include a student for the update
 		includeStudent();
 		// Get the base URL
-		driver.get("http://localhost:3000/");
+		driver.get(baseUrl);
 	    // Action on Edit
 	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[5]/button[1]")).click(); 
 	    // Update email field 
@@ -134,7 +134,7 @@ public class mernCRUDTest {
 		 String Genero = "m"; 
 		 
 		 // Get the base URL
-		 driver.get("http://localhost:3000/");
+		 driver.get(baseUrl);
 		 
 		 // Retrieve values of the table
 		 String RetrievedName = driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[1]")).getText();
@@ -154,7 +154,7 @@ public class mernCRUDTest {
 	 
 	 private void includeStudent() {
 		// Get the base URL
- 		driver.get("http://localhost:3000/");
+ 		driver.get(baseUrl);
  		// Action click on Add New
  	    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();//"//div[@id='root']/div/div[2]/button"
  	    // Set name field
