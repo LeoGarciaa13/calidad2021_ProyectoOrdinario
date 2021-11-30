@@ -18,7 +18,5 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
-  - sudo cd /mern-crud
-  - sudo docker-compose up
 
   - mysql -u root --password="" < test/travis.sql
