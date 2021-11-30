@@ -105,14 +105,14 @@ public class mernCRUDTest {
 		// Get the base URL
 		driver.get(baseUrl);
 	    // Action on Edit
-	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr[1]/td[5]/button[1]")).click(); 
-	    // Update email field 
+	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[5]/button[1]")).click(); 
+	    // Update email fields
 	    driver.findElement(By.name("email")).click();
 	    driver.findElement(By.name("email")).clear();
 	    driver.findElement(By.name("email")).click();
 	    driver.findElement(By.name("email")).clear();
 	    pause(2000);
-	    driver.findElement(By.name("email")).sendKeys("jajajaj@gmail.com");
+	    driver.findElement(By.name("email")).sendKeys("abc@gamil.com");
 	    // Save the update
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/button")).click();
 	    // Make a pause in order for the server to catch up with the code
