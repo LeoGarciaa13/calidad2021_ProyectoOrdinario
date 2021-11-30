@@ -21,6 +21,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class mernCRUDTest {
+	// Innstance for webdriver
 	private WebDriver driver;
 	private String baseUrl;
 	private boolean acceptNextAlert = true;
