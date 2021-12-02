@@ -96,7 +96,7 @@ public class mernCRUDTest {
 	    assertThat("Leo G", is(not(FirstUser)));
 
 	 }
-	 /*
+	 
 	 // Update person tests
 	 @Test
 	 public void testmernUpdate() throws Exception {
@@ -105,14 +105,23 @@ public class mernCRUDTest {
 		// Get the base URL
 		driver.get(baseUrl);
 	    // Action on Edit
-	    driver.findElement(By.xpath("/html/body/div/div/div[2]/table/tbody/tr/td[5]/button[1]")).click(); 
+	    driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/table/tbody/tr[1]/td[5]/button[1]")).click(); 
+	    // Make a pause to catch up web element
+	    pause(3000);
+	    // Update name field
+	    driver.findElement(By.name("name")).click();
+	    driver.findElement(By.name("name")).clear();
+	    driver.findElement(By.name("name")).sendKeys("GA Leo");
 	    // Update email fields
-	    driver.findElement(By.name("email")).click();
 	    driver.findElement(By.name("email")).clear();
-	    driver.findElement(By.name("email")).click();
-	    driver.findElement(By.name("email")).clear();
-	    pause(2000);
-	    driver.findElement(By.name("email")).sendKeys("abc@gamil.com");
+	    driver.findElement(By.name("email")).sendKeys("abc@gmail.com");
+	    // Update the age
+	    driver.findElement(By.name("age")).clear();
+	    driver.findElement(By.name("age")).sendKeys("26");
+	    // Update the gender
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Male'])[1]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
 	    // Save the update
 	    driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/button")).click();
 	    // Make a pause in order for the server to catch up with the code
@@ -121,7 +130,7 @@ public class mernCRUDTest {
 	    String tag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
 	    assertThat("Nice one!", is(tag));
 
-	 }*/
+	 }
 	 
 	// Search person fields
 	 @Test
