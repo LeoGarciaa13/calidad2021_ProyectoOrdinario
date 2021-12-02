@@ -128,7 +128,7 @@ public class mernCRUDTest {
 	    pause(5000);
 	    // Verify presence of texts
 	    String tag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div[4]/div/div")).getText();
-	    assertThat("Nice one!", is(tag));
+	    assertThat("Success", is(tag));
 
 	 }
 	 
